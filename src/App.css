@@ -1,0 +1,19 @@
+/* App Layout Cleanup */
+#root {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Optional reusable card class */
+.card {
+  padding: 2em;
+}
+
+/* Optional placeholder class */
+.read-the-docs {
+  color: #888;
+  font-size: 0.85rem;
+}
