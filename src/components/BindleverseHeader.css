@@ -197,3 +197,12 @@
     background-position: 0 100%;
   }
 }
+.clickable-logo {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.clickable-logo:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 6px #00ffff);
+}

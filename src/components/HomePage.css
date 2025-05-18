@@ -1,0 +1,63 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.library-section {
+  flex-grow: 1;
+  padding: 24px;
+  padding-bottom: 80px; /* ensures toolbar doesn't overlap */
+  overflow-y: auto;
+  text-align: center;
+}
+
+.library-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #00f8ff;
+}
+
+.library-section p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.toolbar {
+  position: fixed; /* was sticky */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  background-color: #111;
+  border-top: 2px solid #222;
+  z-index: 100;
+}
+
+.icon {
+  font-size: 24px;
+  color: #888;
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #0ff;
+  transform: scale(1.1);
+}
+
+.icon.active {
+  color: #00f8ff;
+}
+
+.icon.center-logo {
+  font-size: 30px;
+  color: #ff00ff;
+  transform: translateY(-4px);
+}
