@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 
@@ -32,11 +32,6 @@ const MainLayout = () => {
 
 function App() {
   const [isSplashVisible, setSplashVisible] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setSplashVisible(false), 2600);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="App">

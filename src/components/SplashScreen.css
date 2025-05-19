@@ -18,7 +18,7 @@
 .splash-logo {
   width: 70%;
   max-width: 380px;
-  animation: fadeInLogo 0.8s ease-in-out;
+  animation: fadeInLogo 1s ease-in-out, neonCharge 3.5s ease-in-out forwards;
 }
 
 @keyframes fadeInLogo {
@@ -29,5 +29,29 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes neonCharge {
+  0% {
+    filter: none;
+  }
+  25% {
+    filter: drop-shadow(0 0 2px #00f8ff);
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 6px #00f8ff)
+      drop-shadow(0 0 12px #00f8ff)
+      drop-shadow(0 0 20px #00f8ff);
+  }
+  75% {
+    filter:
+      drop-shadow(0 0 4px #00f8ff)
+      drop-shadow(0 0 8px #00f8ff)
+      drop-shadow(0 0 14px #00f8ff);
+  }
+  100% {
+    filter: none; /* 👈 back to base */
   }
 }

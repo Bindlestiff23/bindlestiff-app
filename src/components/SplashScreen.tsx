@@ -6,8 +6,8 @@ const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFadeOut(true), 2000);
-    const endTimer = setTimeout(() => onFinish(), 2600);
+    const fadeTimer = setTimeout(() => setFadeOut(true), 3600); // fade after glow peaks
+    const endTimer = setTimeout(() => onFinish(), 4200);        // finish after soft glow settles
 
     return () => {
       clearTimeout(fadeTimer);

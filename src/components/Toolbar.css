@@ -1,33 +1,107 @@
 .toolbar {
   position: sticky;
-  bottom: 0;
+  bottom: 16px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 480px;
+
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  gap: 16px;
+
   padding: 12px 0;
-  background-color: #111;
-  border-top: 2px solid #222;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 18px;
+  border: 3px solid #00f8ff;
+  animation: pulseBorder 2.5s infinite ease-in-out;
+
+  box-shadow:
+    0 0 8px rgba(0, 248, 255, 0.3),
+    0 0 16px rgba(0, 248, 255, 0.15);
+
   z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.icon {
-  font-size: 24px;
-  color: #888;
-  transition: color 0.2s ease, transform 0.2s ease;
+@keyframes pulseBorder {
+  0% {
+    border-color: #00f8ff;
+    box-shadow: 0 0 6px #00f8ff;
+  }
+  50% {
+    border-color: #00c2ff;
+    box-shadow: 0 0 12px #00f8ff, 0 0 24px #00f8ff;
+  }
+  100% {
+    border-color: #00f8ff;
+    box-shadow: 0 0 6px #00f8ff;
+  }
+}
+
+.toolbar-side {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.toolbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* General icon style */
+.neon-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease, filter 0.2s ease, brightness 0.2s ease;
   cursor: pointer;
+  filter: none; /* Allow native color */
 }
 
-.icon:hover {
-  color: #0ff;
+.neon-icon:hover {
   transform: scale(1.1);
+  filter: brightness(1.8);
 }
 
-.icon.active {
-  color: #00f8ff;
+.neon-icon.active {
+  filter: drop-shadow(0 0 6px #bf40ff) drop-shadow(0 0 12px #bf40ff);
 }
 
-.icon.center-logo {
-  font-size: 30px;
-  color: #ff00ff;
-  transform: translateY(-4px);
+/* Generate Icon (Center - 🎵) */
+.neon-icon.center-logo {
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  border-radius: 50%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 6px #ff00ff, 0 0 14px #ff00ff;
+
+  animation: pulseCreate 2s infinite ease-in-out;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.neon-icon.center-logo:hover {
+  transform: scale(1.15);
+}
+
+@keyframes pulseCreate {
+  0% {
+    box-shadow: 0 0 6px #ff00ff, 0 0 14px #ff00ff;
+  }
+  50% {
+    box-shadow: 0 0 12px #ff00ff, 0 0 24px #ff00ff;
+  }
+  100% {
+    box-shadow: 0 0 6px #ff00ff, 0 0 14px #ff00ff;
+  }
 }
