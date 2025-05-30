@@ -1,0 +1,167 @@
+.toolbar {
+  --toolbar-gap: 46px;
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 475px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--toolbar-gap);
+
+  height: 105px;
+  padding: 16px 18px;
+
+  background-color: #000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 2rem;
+  border: 5px solid #ff00ff; /* 💖 Saturated pink border */
+
+  box-shadow:
+    0 0 4px #ff00ff,
+    0 0 8px #ff00ff,
+    0 0 12px #ff00ff; /* 🌟 Tight moon-matched glow */
+
+  z-index: 1000;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  pointer-events: auto;
+}
+
+/* Pulse Animation */
+@keyframes pulseBorder {
+  0% {
+    border-color: #00f8ff;
+    box-shadow: 0 0 3px #00f8ff;
+  }
+  50% {
+    border-color: #00c2ff;
+    box-shadow:
+      0 0 6px #00f8ff,
+      0 0 24px #00f8ff;
+  }
+  100% {
+    border-color: #00f8ff;
+    box-shadow: 0 0 3px #00f8ff;
+  }
+}
+
+/* Icon Button Wrapper */
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 248, 255, 0.15) 0%, transparent 70%);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  padding: 6px;
+}
+
+.icon-wrapper:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 14px #3003f8,
+    0 0 28px #0015ff;
+}
+
+/* Icons */
+.neon-icon {
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+  cursor: pointer;
+  transform-origin: center;
+}
+
+/* Boosted Solace Icon */
+.neon-icon[src*='solace'] {
+  filter: drop-shadow(0 0 6px #a855f7);
+}
+.neon-icon[src*='solace']:hover {
+  filter: drop-shadow(0 0 14px #a855f7);
+}
+.center-icon {
+  transform: scale(1.35);
+  box-shadow:
+    0 0 16px #a855f7,
+    0 0 30px #ff00c8;
+  z-index: 3;
+  transform-origin: center;
+}
+
+/* Individual App Icon Glows */
+.neon-icon[src*='suno-web'] {
+  filter: drop-shadow(0 0 6px #00f8ff);
+}
+.neon-icon[src*='suno-web']:hover {
+  filter: drop-shadow(0 0 14px #00f8ff);
+}
+
+.neon-icon[src*='bandlab'] {
+  filter: drop-shadow(0 0 6px #ff7f11);
+}
+.neon-icon[src*='bandlab']:hover {
+  filter: drop-shadow(0 0 14px #ff7f11);
+}
+
+.neon-icon[src*='capcut'] {
+  filter: drop-shadow(0 0 6px #ff00c8);
+}
+.neon-icon[src*='capcut']:hover {
+  filter: drop-shadow(0 0 14px #ff00c8);
+}
+
+.neon-icon[src*='youtube'] {
+  filter: drop-shadow(0 0 6px #ff1f1f);
+}
+.neon-icon[src*='youtube']:hover {
+  filter: drop-shadow(0 0 14px #ff1f1f);
+}
+.icon-slot {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-slot {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  .toolbar {
+    --toolbar-gap: 20px;
+    padding: 12px 8px; /* Optional: reduce padding too */
+  }
+
+  .icon-wrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+  .neon-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .center-icon {
+    transform: scale(1.25); /* Slightly smaller boost for mobile */
+  }
+}

@@ -1,0 +1,8 @@
+node_modules
+dist
+.vite
+.git
+*.png
+*.svg
+*.mp4
+*.zip

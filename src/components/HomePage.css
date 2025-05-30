@@ -1,0 +1,177 @@
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 🔮 Glow Shell — Rounded Gradient Container */
+.glow-shell {
+  width: 90%;
+  max-width: 475px;
+  min-height: 575px;
+  margin: 0 auto 64px auto;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 6px;
+
+  background: linear-gradient(to bottom, #00f8ff, #ff00c8);
+
+  /* 💡 Tight, rich glow with minimal halo */
+  box-shadow:
+    0 0 4px #00f8ff,
+    0 0 8px #00f8ff,
+    0 0 6px #ff00ff,
+    0 0 12px #ff00ff;
+}
+
+
+/* 💎 Gradient Border Layer */
+.glow-border {
+  background: #000;
+  border-radius: 1.8rem;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌌 Inner Content Container */
+.glow-container {
+  background-color: #000;
+  border-radius: 2rem;
+  width: 100%;
+  max-width: 475px;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* 🌌 Starfield Layer */
+.starfield-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.starfield-static,
+.starfield-twinkle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.starfield-twinkle {
+  animation: twinkle 4s ease-in-out infinite alternate;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* 🌕 Moon */
+.background-image-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.charlie-moon-bg {
+  width: 100%;
+  height: auto;
+  max-height: 537px;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px #ff00ff) drop-shadow(0 0 10px #ff00ff);
+}
+
+/* 🚀 Charlie */
+.charlie-wrapper {
+  position: absolute;
+  bottom: 125px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: bottom center;
+  height: 230px;
+  z-index: 1;
+  pointer-events: auto;
+  will-change: transform;
+  animation: charlie-float 3s ease-in-out infinite;
+  overflow: visible;
+}
+
+@keyframes charlie-float {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -12px); }
+}
+
+.charlie-icon {
+  height: 100%;
+  object-fit: contain;
+  pointer-events: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  transform: scale(1);
+}
+
+.charlie-icon:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px #00f8ff) drop-shadow(0 0 18px #ff00c8);
+}
+
+/* 📱 Mobile Optimizations */
+@media (max-width: 490px) {
+  .glow-container {
+    padding: 32px 16px 72px;
+    max-height: 95vh;
+    overflow: hidden;
+  }
+
+  .logo-text,
+  .logo-text::before,
+  .logo-text::after {
+    font-size: 3.2rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .glow {
+    font-size: 1.2rem !important;
+    margin-top: 0.25rem !important;
+  }
+
+  .charlie-wrapper {
+    height: 150px !important;
+    bottom: 150px !important;
+  }
+
+  .charlie-moon-bg {
+    max-height: 42vh;
+    object-fit: cover;
+  }
+}
