@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/bindlestiff-app">
+      <BrowserRouter basename={import.meta.env.MODE === 'development' ? '/' : '/bindlestiff-app'}>
         {isSplashVisible ? (
           <SplashScreen onFinish={() => setSplashVisible(false)} />
         ) : (
