@@ -13,7 +13,6 @@ import Toolbar from './components/Toolbar'
 
 const MainLayout = () => {
   const location = useLocation()
-  const isHome = location.pathname === '/'
 
   return (
     <>
