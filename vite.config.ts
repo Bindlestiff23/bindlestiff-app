@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/bindlestiff23.github.io/' : '/',
+export default defineConfig({
+  base: '/', // ✅ Always use '/' for root GitHub Pages repo
   plugins: [react()],
   server: {
     host: true,
@@ -12,4 +12,4 @@ export default defineConfig(({ command }) => ({
     outDir: 'dist',
     emptyOutDir: true,
   },
-}))
+})
