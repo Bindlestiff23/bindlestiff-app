@@ -34,8 +34,8 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/">
-
+      {/* ✅ Set the basename to match your GitHub Pages repo */}
+<BrowserRouter basename="/">
         {isSplashVisible ? (
           <SplashScreen onFinish={() => setSplashVisible(false)} />
         ) : (
